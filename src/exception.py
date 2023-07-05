@@ -1,5 +1,5 @@
 import sys  #used to manipulate the runtime enviornment
-import logging 
+from src.logger import logging 
 
 def error_message_detail(error,error_detail:sys):          #custom exception handling
     _,_,exc_tb=error_detail.exc_info()
@@ -16,11 +16,5 @@ class CustomException(Exception):
         return self.error_message
 
 
-if __name__=="__main__":
-    try:
-        a=1/0
-    except:
-        logging.info("Divide by zero error")
-        raise CustomException
 
     
